@@ -28,9 +28,6 @@ class Inv extends CI_Controller {
 
 	public function add_item()
 	{
-		$this->load->helper('form');
-		$this->load->library('form_validation');
-
 		$input_data = $this->get_input_data();
 		$data['result'] = $this->inv_item_model->add_inv_item($input_data) ? 1 : 0;
 		echo json_encode($data);
@@ -38,6 +35,9 @@ class Inv extends CI_Controller {
 
 	public function add_item_page()
 	{
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+
 		$data['field_names'] = $this->get_field_names();
 		$this->load->view('inv/add', $data);
 	}
