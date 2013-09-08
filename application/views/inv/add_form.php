@@ -1,6 +1,6 @@
 <?php echo validation_errors('<div class="critical">', '</div>'); ?>
 
-<?php echo form_open('inv/add', 'onsubmit="return confirm(\'Are you sure you want to add?\');"') ?>
+<?php echo form_open('inv/add_item', 'onsubmit="return confirm(\'Are you sure you want to add?\');"') ?>
 
 <?php
 define('CELL_COUNT_PRE_ROW', 2);
