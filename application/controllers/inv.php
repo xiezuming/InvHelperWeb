@@ -49,7 +49,7 @@ class Inv extends CI_Controller {
 	}
 	private function delete_file($file_path) {
 		if (file_exists ( $file_path )) {
-			unlink ( $filename );
+			unlink ( $file_path );
 		}
 	}
 	public function add_item_page() {
