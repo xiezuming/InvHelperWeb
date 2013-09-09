@@ -37,15 +37,20 @@ class Inv extends CI_Controller {
 			
 			$path = UPLOAD_BASE_PATH . $inv_item ['userId'] . '/';
 			if ($inv_item ['photoname1'])
-				unlink ( $path . $inv_item ['photoname1'] );
+				delete_file ( $path . $inv_item ['photoname1'] );
 			if ($inv_item ['photoname2'])
-				unlink ( $path . $inv_item ['photoname2'] );
+				delete_file ( $path . $inv_item ['photoname2'] );
 			if ($inv_item ['photoname3'])
-				unlink ( $path . $inv_item ['photoname3'] );
+				delete_file ( $path . $inv_item ['photoname3'] );
 		}
 		$data ['result'] = $this->inv_item_model->add_inv_item ( $input_data ) ? SUCCESS : FAILURE;
 		
 		echo json_encode ( $data );
+	}
+	private function delete_file($file_path) {
+		if (file_exists ( $file_path )) {
+			unlink ( $filename );
+		}
 	}
 	public function add_item_page() {
 		$this->load->helper ( 'form' );
