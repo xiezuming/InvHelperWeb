@@ -37,11 +37,11 @@ class Inv extends CI_Controller {
 			
 			$path = UPLOAD_BASE_PATH . $inv_item ['userId'] . '/';
 			if ($inv_item ['photoname1'])
-				delete_file ( $path . $inv_item ['photoname1'] );
+				$this->delete_file ( $path . $inv_item ['photoname1'] );
 			if ($inv_item ['photoname2'])
-				delete_file ( $path . $inv_item ['photoname2'] );
+				$this->delete_file ( $path . $inv_item ['photoname2'] );
 			if ($inv_item ['photoname3'])
-				delete_file ( $path . $inv_item ['photoname3'] );
+				$this->delete_file ( $path . $inv_item ['photoname3'] );
 		}
 		$data ['result'] = $this->inv_item_model->add_inv_item ( $input_data ) ? SUCCESS : FAILURE;
 		
